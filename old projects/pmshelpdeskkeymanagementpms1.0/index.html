@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+@import url(//db.onlinewebfonts.com/c/19580604133dfd68ae370ddc889aedab?family=Futura+Lt+BT);
+@font-face {font-family: "Futura Lt BT"; src: url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.eot"); src: url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.woff") format("woff"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.svg#Futura Lt BT") format("svg"); }
+</style>
+<title>Key Management (Keynest)</title>
+<link rel="shortcut icon" href="../favicon-96x96.png" type="image/icon">
+<link rel="stylesheet" href="../Styles/indexfull.css">
+</head>
+
+<body>
+  <header>
+      <a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">
+        <img class="logo" src="../Veevelogo.png">
+      </a>
+      <nav>
+          <ul>
+              <li><a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">Properties</a></li>
+              <li><a href="https://pms.veeveops.info/admin/real_bookings_list.php">Bookings</a></li>
+              <li><a href="https://pms.veeveops.info/admin/custom/front/key_operations.php">Keys</a></li>
+              <li><a href="https://pms.veeveops.info/admin/custom/front/opsSchedule.php?city=London">Serenity Now</a></li>
+              <li><a href="https://pms.lavanda.app/login">Lavanda</a></li>
+              <li><a href="https://www.keynest.com">Keynest</a></li>
+              <li><a href="../pmshelpdeskhome1.0/index.html">Ops Playbook</a></li>
+          </ul>
+      </nav>
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <svg viewBox="0 0 100 80" width="40" height="55">
+            <rect width="70" height="10" rx="8"></rect>
+            <rect y="20" width="70" height="10" rx="8"></rect>
+            <rect y="40" width="70" height="10" rx="8"></rect>
+        </svg>
+          <ul class="mobile-menu">
+            <li><a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">Properties</a></li>
+            <li><a href="https://pms.veeveops.info/admin/real_bookings_list.php">Bookings</a></li>
+            <li><a href="https://pms.veeveops.info/admin/custom/front/key_operations.php">Keys</a></li>
+            <li><a href="https://pms.veeveops.info/admin/custom/front/opsSchedule.php?city=London">Serenity Now</a></li>
+            <li><a href="https://pms.lavanda.app/login">Lavanda</a></li>
+            <li><a href="https://www.keynest.com">Keynest</a></li>
+            <li><a href="/opsHelpdesk/pmshelpdeskhome1.0/index.html">Ops Playbook</a></li>
+        </ul>
+        </div>
+  </header>
+  <main>
+<div id="body">
+  <button id="back"><a href="/opsHelpdesk/pmshelpdeskhome1.0/index.html">← Back to Ops Playbook</a></button>        
+      <h1>Key Management (PMS)</h1>     
+        <div class="accordion" id="accordionPolicy">
+          <div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Adding a Key To PMS
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPolicy">
+                <div class="accordion-body">
+          <h4>Step-By-Step Procedure</h4><br>
+      &nbsp;&nbsp; Before starting this process, you will need to have:
+            <strong>
+                </strong><ul><strong>
+                    <li>
+                        the Property's PID, Address 
+                    </li>    
+                    <li>
+                        the Property's Address
+                    </li>      
+            </strong> 
+        or
+            <strong>
+                    <li>
+                        The Host's Name
+                    </li>
+                </strong></ul><strong>
+            </strong>
+        <ul>
+            Navigate to:<a href="https://pms.veeveops.info/admin/custom/front/key_operations.php"><strong>Key Operations</strong></a>
+            <br>
+                <li>While on this main screen, use the search bar to 
+                  search by <strong> Tag ID </strong> for a key number that does not appear in the 
+                  drop-down menu. If the number you type comes up in the dropdown below 
+                  the search bar, it has already been assigned to a property.</li>
+            <br>
+            <img src="/opsHelpdesk/pmshelpdeskkeymanagementpms1.0/Images/Veeve Key Management Screens/Key Management Screen.png" class="col-md-10">  
+            <li>In the top right-hand corner click "Add Keysets"</li>
+            <img src="/opsHelpdesk/pmshelpdeskkeymanagementpms1.0/Images/Veeve Key Management Screens/Key buttons.png">
+
+            <li>Search for the property using the "Property ID" or "Property Address" tabs, click the option in the dropdown to search</li>
+         
+            <br>
+            <img src="/opsHelpdesk/pmshelpdeskkeymanagementpms1.0/Images/Veeve Key Management Screens/Key add set search.png" class="col-md-10">
+            <br>  
+            <li>Enter the "Key Tag" number in the form as seen below:</li>
+            <br>
+            <img src="/opsHelpdesk/pmshelpdeskkeymanagementpms1.0/Images/Veeve Key Management Screens/KeyInput form.png" class="col-md-10">
+            <br>  
+            <li>Check the key-safe for a hook that is unused, enter the "Hook Number" in the corresponding text field</li>
+            <br>
+                <li>Enter the number of keys/fobs in the boxes provided</li>
+            <br>
+            
+                <li>Click "add Set" to add an additional set of keys, click once per set of keys received.</li>
+            <br>
+                <li>Enter the number of keys and fobs on each set in the corresponding text boxes.</li>
+            <br>
+                <li>Click "Choose File" to upload a photo of the 
+                    keysets, making sure any serial numbers, individual keys and fobs are 
+                    all clearly visible.</li>
+            <br>
+                <li>Click "Submit"</li>
+            <br>
+                <li>Each keyset will now automatically be assigned a 
+                    corresponding "Set Number", see the figure below for a what the finished
+                    page should show.</li>
+            <br>
+                <li>Write each "Tag Number" and "Set Number" on either side of a paper key-tag insert and attach to each set of keys</li>
+            <br>
+                <li>Add the keyset to the hook defined earlier in the sequence.</li>
+            <br>
+        </ul>
+                </div>
+              </div>
+            </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Editing a Key in PMS
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionPolicy">
+              <div class="accordion-body">
+                <h4>Step-By-Step Procedure</h4>    
+                <p>
+                There are a number of circumstances where a property’s keysets will need to be edited, for example if a homeowner changes the locks or adds an alarm system to their property. The below procedure will use the following example (though the principles apply to the majority of cases where keys will need to be edited).
+                <i>“A homeowner has decided to change their locks, switching to a single security key and an alarm fob, rather than their previous three keys.”</i>
+                The keys have arrived at the Veeve office, so the new keys need to be swapped with the old keys and the old keys removed from PMS. 
+                 </p>
+                 <ol>
+                    <li>
+                      Navigate to: <a href="https://pms.veeveops.info/admin/custom/front/key_operations.php"><strong>Key Operations</strong></a>
+                    </li>
+                  <br>
+                    <li>
+                      In the top right-hand corner click "Add Keysets"
+                      <br>
+                      <img src="Images/Veeve Key Management Screens/Key buttons.png" style="height: auto; width: 50%;">
+                    </li>
+                  <br>
+                    <li>
+                      Search for the Property using either it’s Property ID or Address
+                    </li>
+                  <br>
+                    <li>
+                      On the following screen (example shown below), edit the <strong>description, of keys, no. of fobs and image</strong>  to reflect the new keys. 
+                      <img src="Images/Veeve Key Management Screens/KeyInput form.png" style="height: auto; width: 50%;">
+                    </li>
+                  <br>
+                    <li>
+                      Change the information to ensure it matches the master-set
+                    </li>
+                  <br>
+                    <li>
+                      Press "Submit"
+                    </li>
+                  <br>
+                    <li>
+                      Place the new keys on the corresponding sets 
+                    </li>
+                  <br>
+                    <li>
+                      Place the keysets back in the key safe and the remaining keysets in keyset.
+                    </li>
+                  <br>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Updating Key Movement
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionPolicy">
+            <div class="accordion-body">
+              <h4>Step-By-Step Procedure</h4>
+              <p>This process can be completed for multiple keysets at once, but only one property at a time.</p>
+              <ol>
+                <li>
+                  Navigate to: <a href="https://pms.veeveops.info/admin/custom/front/key_operations.php"><strong>Key Operations</strong></a>
+                </li>
+                <li>
+                  In the top right-hand corner click "Update Key Movement"
+                  <br>
+                  <img src="Images/Veeve Key Management Screens/Key buttons.png" style="height: auto; width: 50%;">
+                </li>
+              <br>
+                <li>
+                  On the following screen search for the Property using either it’s Property ID or Address
+                  <br>
+                  <br>
+                  <img src="/opsHelpdesk/pmshelpdeskkeymanagementpms1.0/Images/Veeve Key Management Screens/Key Search (UKM).png" style="height: auto; width: 70%;">
+                </li>
+              <br>
+                <li>
+                  On the following screen, you will be shown a list of keys and their curent "locations" as below:
+                  <br>
+                  <img src="Images/Veeve Key Management Screens/Key Search #1 (UKM).png" style="height: auto; width: 70%;">
+                </li>
+              <br>
+                <li>
+                    Keys will be listed in one of the following locations:
+                    <br>
+                    <ul>
+                      <li><strong>Key Safe- </strong>Within the Keysafe in the Veeve Office</li>
+                      <li><strong>Host- </strong>This set of keys has been returned to the Host and will need to be collected again before it can be used</li>
+                      <li><strong>Staff- </strong>This set of keys has been signed out and is with a member of staff, their name should be listed in the "Notes" section</li>
+                      <li><strong>Missing- </strong>This keyset is unable to be located by staff members, should this option be selected a member of staff must begin the <a href="#">"Lost Key Procedure"</a></li>
+                      <li><strong>In Property- </strong>This keyset is being left in the property, either for a guest stay or by host request </li>
+                      <li><strong>Concierge- </strong>This keyset is kept with the buildings concierge, please check the properties Ops Info for details </li>
+                      <li><strong>Keynest-</strong>This keyset is being stored in a keynest store, please see "Booking a Keynest Key" for further details</li>
+                      <li><strong>Booking- </strong>this keyset has been signed out for a booking</li>
+                      <li><strong>Not Working- </strong>This keyset has been found to not work as it should, this keyset should be replaced at the earliest possible point and the non functioning keys disposed of</li>
+                      <li><strong>Other- </strong> Any location/status that is not covered by the above categorie, please see the notes for details</li>
+                    </ul>
+                    <br>
+                </li>
+                <li>
+                  Select the keyset you wish to change the location of
+                  <br>
+                  <img src="/Ops Bible Directory/Images/Veeve Key Management Screens/Selected Key to move(UKM).png" style="height: auto; width: 70%;">
+                </li>
+                <br>
+                <li>
+                  Using the dropdown at the bottom of the page, select which location the key has moved to
+                  <br>
+                  <img src="Images/Veeve Key Management Screens/Select within the dropdown (UKM).png" style="height: auto; width: 60%;">
+                  <br>
+                </li>
+                <br>
+                <li>
+                  At the bottom of the page, press the "Submit" button, and you will see a green bar at the top of the page, this means that you have succesfully updated the keyset's location.
+                  <img src="/opsHelpdesk/pmshelpdeskkeymanagementpms1.0/Images/Veeve Key Management Screens/Process Completed (UKM).png" style="height: auto; width: 60%;">
+                </li>
+              </ol>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<a href="#" class="top" id="top">Back to Top ↑</a>
+</main>
+<script>
+
+  // Mobile menu
+  function toggleMobileMenu(menu) {
+    menu.classList.toggle('open')
+  }
+
+
+  //Back to top button
+
+  $(window).scroll(function() { 
+    if($(this).scrollTop() >= 60) { 
+        $('#top').fadeIn("fast"); 
+    } else {
+        $('#top').fadeOut("fast");
+    }
+});
+
+$('#top').click(function() { 
+    $('body,html').animate({scrollTop:0},500); 
+    return false;
+});
+
+//scroll to top on accordion click
+
+$('.accordion-button').click(function() {
+    $('body,html').animate({scrollTop:0},500);
+    return false});
+
+//auto close accordions when another is opened
+let active = document.querySelectorAll(".accordion-div .accordion.active");
+for(let j = 0; j <active.length; j++){
+  active[j].classList.remove("active");
+  active[j].nextElementSibling.style.maxHeight = null; 
+};
+
+</script>
+</body>
+</html>

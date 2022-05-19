@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+@import url(//db.onlinewebfonts.com/c/19580604133dfd68ae370ddc889aedab?family=Futura+Lt+BT);
+@font-face {font-family: "Futura Lt BT"; src: url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.eot"); src: url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.woff") format("woff"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.svg#Futura Lt BT") format("svg"); }
+</style>
+<title>OperationsPlaybook</title>
+<link rel="shortcut icon" href="../favicon-96x96.png" type="image/icon">
+<link rel="stylesheet" href="../Styles/indexfull.css">
+</head>
+
+<body>
+  <header>
+      <a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">
+        <img class="logo" src="../Veevelogo.png">
+      </a>
+      <nav>
+          <ul>
+              <li><a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">Properties</a></li>
+              <li><a href="https://pms.veeveops.info/admin/real_bookings_list.php">Bookings</a></li>
+              <li><a href="https://pms.veeveops.info/admin/custom/front/key_operations.php">Keys</a></li>
+              <li><a href="https://pms.veeveops.info/admin/custom/front/opsSchedule.php?city=London">Serenity Now</a></li>
+              <li><a href="https://pms.lavanda.app/login">Lavanda</a></li>
+              <li><a href="https://www.keynest.com">Keynest</a></li>
+              <li><a href="/opsHelpdesk/pmshelpdeskhome1.0/index.html">Ops Playbook</a></li>
+          </ul>
+      </nav>
+      <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+        <svg viewBox="0 0 100 80" width="40" height="55">
+            <rect width="70" height="10" rx="8"></rect>
+            <rect y="20" width="70" height="10" rx="8"></rect>
+            <rect y="40" width="70" height="10" rx="8"></rect>
+        </svg>
+          <ul class="mobile-menu">
+            <li><a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">Properties</a></li>
+            <li><a href="https://pms.veeveops.info/admin/real_bookings_list.php">Bookings</a></li>
+            <li><a href="https://pms.veeveops.info/admin/custom/front/key_operations.php">Keys</a></li>
+            <li><a href="https://pms.veeveops.info/admin/custom/front/opsSchedule.php?city=London">Serenity Now</a></li>
+            <li><a href="https://pms.lavanda.app/login">Lavanda</a></li>
+            <li><a href="https://www.keynest.com">Keynest</a></li>
+            <li><a href="/opsHelpdesk/pmshelpdeskhome1.0/index.html">Ops Playbook</a></li>
+        </ul>
+        </div>
+  </header>
+  <main>
+<div id="body">   
+  <button id="back"><a href="/opsHelpdesk/pmshelpdeskhome1.0/index.html">← Back to Ops Playbook</a></button>   
+  
+      <h1>Lavanda</h1>     
+        <div class="accordion" id="accordion" style="width:87%;">
+          <div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Creating a Ticket
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse in" aria-labelledby="headingOne" data-bs-parent="#accordionCreateTicket">
+                <div class="accordion-body">
+                <p>
+                  Before creating a ticket for a new issue, it’s always a good idea to search for an existing ticket to see if the issue has already been reported. If not, to create a new ticket:
+                </p>
+                  <ul>
+                    <li>In the main menu, click Operations, then Tickets</li>
+                    <li>On the Ticket page, on the top right-hand corner, click New Ticket</li>
+                    <li>In the ticket creation page, select a property code and priority and choose a due date by clicking on the calendar</li>
+                    <li>Add a title and description to your ticket that fully describes the issue you’re reporting and what needs to happen next</li>
+                    <li>Assign the ticket to a relevant team queue and category</li>
+                    <li>Select an owner for the ticket. This should be the user that’s responsible for progressing the issue towards resolution</li>
+                    <li>Hit Create This Ticket to save your ticket and notify the owner.</li>
+                  </ul>
+               
+                  <ol class="captionbox"> 
+                <h4>
+                  Information to include on Tickets
+                </h4>
+                    <li><strong>1. Property:</strong> The Veeve Property ID as assigned on PMS</li>
+                    <li><strong>2. Status:</strong> Set to New as standard, changed to In Progress when the job is booked.</li>
+                    <li><strong>3. Priority:</strong> How urgently does the issue need to be fixed?</li>
+                    <li><strong>4. Due Date:</strong> the prospective due date for the ticketed issue to be resolved, when a task is created. Based on the priority assigned above. This is an estimate based on priority until the relevant department reviewed the resolution steps and can assign a proper due date.</li>
+                    <li><strong>5. Title:</strong> A short summary of the issue reported. E.g. “WIFI Cutting out at regular intervals.”</li> 
+                    <li><strong>6. Job Description:</strong> A full, fleshed out description of the issue.</li>
+                    <li><strong>7. Category:</strong> Assigning the issue type / segment to a ticket</li>
+                    <li><strong>8. Tags:</strong> Key descriptive word to associate ticket or tasks to an activity (Tags can only be added once a ticket is saved and created) e.g. if the task includes fridge the tag would be “Appliances “</li>
+                    <li><strong>9. Team Queue:</strong> This will usually be the team carrying the ticket to completion, whilst also sending notifications of ticket updates to members of that team.</li>
+                    <li><strong>10. Notify All Members: Checking this button will notify all the members of a particular team that an issue has been added to their queue</li>
+                    <li><strong>11. Owner:</strong> The person responsible for ensuring the ticket is completed (including task tracking)</li>
+                    <li><strong>12. Create This Ticket:</strong> Once you have input all the information, click this button to create the ticket and add it to the selected team’s Job Queue</li>
+                  </ol>
+                  <img src="Images/LavandaImages/lavandaCreateATicket.png" class="image" style="width: 90%; margin-left: 5%;">
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Creating a Task
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse in" aria-labelledby="headingTwo" data-bs-parent="#accordionCreateTask">
+              <div class="accordion-body">
+            <p>
+              Once a ticket has been created in Lavanda, it can be found from the Tickets page:
+            </p>
+            <ul>
+              <li>In the main menu, click Operations, then Tickets</li>
+              <li>Use the search bar at the top of the Tickets page to locate the ticket you’re looking for. You can click into the search bar to apply filters to narrow down your search, or to see a wider range of tickets.</li>
+              <li>To save a certain filter combination, click the More Actions button to the right of the search bar and hit Save Current Filters.</li>
+            </ul>
+            <ol class="captionbox">
+              <h4>Information to Include on Tasks</h4>
+                <li><strong>1. Type of Task:</strong> Which type of task is being booked? </li>
+                <li><strong>2. Task Title:</strong> A short description of what needs to be completed.</li>
+                <li><strong>3. Job Description:</strong> A full description of what needs to be completed, including access details, and any parts required.</li>
+                <li><strong>4. Tags:</strong> These are keywords assigned to the tasks,</li>
+                <li><strong>5. Team Queue:</strong> the department that will be resolving this request.</li>
+                <li><strong>6. Assigned To:</strong> This is the individual that is seeing the resolution steps through to completion.</li>
+                <li><strong>7. Create This Task:</strong> This button will create the task, add it to the relevant team queue and assign it to the team member defined above.</li>
+            </ol>  
+            <img src="Images/LavandaImages/lavandaCreateATask.png" class="image" style="width:40%; margin-left: 30%;">
+        </div>
+        </div>
+      </div>
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Finding an Existing Task
+            </button>
+          </h2>
+        <div id="collapseThree" class="accordion-collapse collapse in" aria-labelledby="headingThree" data-bs-parent="#accordionFindTicket">
+          <div class="accordion-body">
+          <p>
+            Once a ticket has been created in Lavanda, it can be found from the Tickets page:
+          </p>
+            <ul>
+            <li>In the main menu, click Operations, then Tickets</li>
+            <li>Use the search bar at the top of the Tickets page to locate the ticket you’re looking for. You can click into the search bar to apply filters to narrow down your search, or to see a wider range of tickets.</li>
+            <li>To save a certain filter combination, click the More Actions button to the right of the search bar and hit Save Current Filters.</li>
+          </ul>
+          <ol class="captionbox">
+            <h4>Information to Include on Tasks</h4>
+            <li><strong>1. Segment Search:</strong> These are combinations of filters, pre-defined for ease of locating tasks</li>
+            <li><strong>2. Currently Selected Filters:</strong> These are the filters currently selected and a search bar to add more filters.</li>
+            <li><strong>3. Ticket Title:</strong> The title of the ticket as assigned when the ticket was created.</li>
+            <li><strong>4. Team Queue and Assigned To:</strong> Lists which team and individual the ticket is assigned to. </li>
+            <li><strong>5. New Ticket Button:</strong> This button will create a new ticket.</li>
+            <li><strong>6. Sort By:</strong> This will change how the list is sorted and what order the tickets appear in.</li>
+            <li><strong>7. Status, Watchers and Last Updated:</strong> This will show the status of the tickets, whether anyone is watching the ticket, and when the ticket was last updated. </li>
+          </ol>
+          <img class="image" src="Images/LavandaImages/lavandaSearch.png" style="width: 90%; margin-left:5%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<a href="#" class="top" id="top">Back to Top ↑</a>
+</main>
+<script>
+  function toggleMobileMenu(menu) {
+    menu.classList.toggle('open')
+  }
+  
+  $(window).scroll(function() { 
+    if($(this).scrollTop() >= 60) { 
+        $('#top').fadeIn("fast"); 
+    } else {
+        $('#top').fadeOut("fast");
+    }
+});
+
+$('#top').click(function() { 
+    $('body,html').animate({scrollTop:0},500); 
+    return false;
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+
+body{
+    height: 85vh;
+    font-family:"Futura LT BT";
+    margin-top: 0px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.938);
+    max-width: 100%;
+}
+
+body * {
+    font-family: "Futura LT BT";
+    list-style: none;
+}
+
+button {
+    font-weight: bold;
+}
+
+.accordion-header{
+font-weight: bold;
+}
+
+a {
+text-decoration: none;
+}
+
+img.logo{
+    height:65px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+header{
+    background-color: white;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    display: inline;
+    box-shadow: black;
+    padding-top:9px;
+    border-bottom: 2px solid rgba(255,234,88,1);
+    flex-wrap: nowrap;
+
+}
+
+
+header * {
+    display: inline;
+    overflow:hidden;  
+}
+
+header li a {
+    margin: 20px;
+    text-decoration: none;
+    color: rgb(41, 36, 36);
+    min-width: none;
+    font-family: "Futura LT BT";
+    font-weight: 550;
+    overflow:hidden;
+
+}
+main li *{
+    text-decoration: none;
+    color: black;
+    list-style: none;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+    background-color: rgba(255,234,88,1);
+}
+
+.nav-link.active{
+    text-decoration: none;
+    color:black;
+    background-color: rgba(255,234,88,1);
+}
+
+main nav div ul li button {
+    min-width: 180px;
+    background-color: rgba(255,234,88,1);
+    list-style: none;
+}
+
+#myTab{
+    display:inline-flexbox;
+    background-color: rgba(255,234,88,1);
+    max-height: 80px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border-top: #FFFFFF;
+    border-right: #FFFFFF;
+    border-left: #FFFFFF;
+    border-bottom: 3px solid #000000;
+}
+
+#body{
+    margin:15px;
+    margin-top:80px;
+    height:100%;
+    text-align: left;
+    line-height: 2.5;
+    font-size: 90%;
+    padding: 3%;    
+    list-style: none;
+}
+
+h1{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5%;
+}
+
+h4{
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+hr{
+    width:100%;
+    color: black;
+    border-width: 3px;
+    text-align: center;
+    margin: auto;
+}
+
+.tab-pane{ position: absolute;
+    top: 160px;
+    width: 90%;
+}
+
+.accordion {
+    width: 100%;
+    padding-top: 15px;
+    border: black;
+}
+
+.accordion-button {
+    background-color: rgb(248, 221, 46);
+}
+
+.accordion-collapse.collapsed.show{
+    background-color: rgba(255,234,88,1);
+  
+}
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: rgba(255,234,88,1);
+    box-shadow: inset 0 -1px 0 black;
+}
+
+.accordion-button:focus{
+    z-index: index 3;
+    border-color: rgba(0,0,0,0.6) 1px;
+    box-shadow: none;
+}
+
+.accordion-item {
+    border: 1px solid rgba(0,0,0,1)
+}
+
+div img{
+    padding-top: 0px;
+    padding-bottom: 25px;
+    border: solid 1px black;
+    display: flex;
+}
+
+ul * {
+    list-style: circle;
+    margin-left: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    margin-left: 0;
+}
+.accordion-button:not(.collapsed)::after{
+    color: black;
+}
+.captionbox{
+    border: 1px solid #000000;
+    width: 90%;
+    margin-left:5%;
+    padding-bottom: 25px;
+}
+.captionbox li{
+    text-align: left;
+
+}
+
+ul * {
+    list-style: circle;
+    margin-left: 50px;
+}
+
+#hamburger-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+#hamburger-icon div {
+    width: 35px;
+    height: 3px;
+    background-color: rgb(41,41,41);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.mobile-menu {
+    display:none;
+    position:absolute;
+    top: 75px;
+    left: 0%;
+    height: inherit;
+    width: 100%;
+}
+
+.open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(255,234,88,1);
+    z-index: 9;
+    box-shadow: 3px 3px 3px rgb(41, 36, 36);
+
+}
+
+.mobile-menu li {
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width:1250px) {
+    header nav {
+        display: none;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+}
+
+
+nav ul li:hover {
+    transform: scale(1.1);
+    transition:0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    color:black;
+}
+
+svg{
+
+    position: fixed;
+    top: 20px;
+    right:0;
+}
+
+svg:hover {
+    fill: rgba(255,234,88,1);
+    transition: 0.4s;
+}
+
+.accordion-button .collapsed {
+    z-index: -1;
+}
+.tab-pane{
+    top: 160px;
+    width: 90%;
+    z-index: -1;
+}
+
+.accordion {
+    width: 100%;
+    padding-top: 0px;
+    border: black;
+    box-shadow: 3px 3px 5px #000000;
+    margin-left: 5%;
+    z-index: -1;
+}
+
+.accordion{
+    z-index: -1;
+
+}
+
+.accordion-button {
+    background-color: rgba(255,234,88,1);
+}
+
+.accordion-collapse.collapsed.show{
+    z-index: 1;
+  
+}
+.accordion-button:not(.collapsed) {
+    color: black;
+    z-index: 1;
+}
+#myTabContent{
+    z-index: -1;
+}
+
+.accordion-button:focus{
+    z-index: index 1;
+    border-color: rgba(0,0,0,0.6) 1px;
+}
+
+.accordion-item {
+    border: 1px solid rgba(0,0,0,1);
+}
+
+div img{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+nav .nav-tabs {
+    width:100%;
+    z-index: 950;
+    margin-top: 3%;
+}
+
+h1 {
+    margin-left:0%;
+    text-align: center;
+    width: 100%;
+    top:100px;
+    border-bottom: 1px solid rgb(0,0,0,);
+    z-index: -1;    
+}
+
+#accordionPolicy {
+    width: 90%;
+}
+.top {
+    text-decoration: none;
+    padding: 10px;
+    font-family: sans-serif;
+    color: black;
+    background-color: rgba(255,234,88,1);
+    border-radius: 100px;
+    position: fixed;
+    right: 10px;
+    z-index: 99;
+    cursor: pointer;
+    opacity: 70%;
+    bottom: 10%;
+    offset: 100px;
+    margin-top: calc(100vh + var(offset));
+}
+
+.top:hover{
+    background-color: rgb(255, 244, 174);
+}
+
+#top{
+    display: none;
+}
+
+button {
+    text-decoration: none;
+    color: black;
+    background-color: gradient rgba(255,234,88,1);
+    border-radius: 15px;
+    opacity: 100%;
+    font-size: 14px;
+    border: 1px solid black ;
+    box-shadow: 2px 2px 2px rgb(41, 36, 36);
+}
+
+button:hover{
+    background-color: rgb(255, 241, 151);
+    transition: 0.3s;
+}
+.accordion-body li {
+    margin-left: 0;
+}
+.accordion-body {
+    margin-left: 0; 
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.accordion-body{
+    background-color: #FEFEFA;
+
+}
+
+#back {
+    margin-bottom: 10px;
+    opacity: 90%;
+    font-size: 14px;
+    background-color: rgba(255,234,88,1);
+
+}
+#back:hover{
+    background-image: linear-gradient(90deg, rgba(255,225,13,1) 0%, rgba(255,234,88,1) 54%, rgba(255,223,0,1) 100%);
+    scale: 1.1;
+    transition: 0.3s; 
+
+}
+ul img {
+object-fit: scale-down;
+justify-content: center;
+width: 80%;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url(//db.onlinewebfonts.com/c/19580604133dfd68ae370ddc889aedab?family=Futura+Lt+BT);
+        @font-face {font-family: "Futura Lt BT"; src: url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.eot"); src: url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.woff") format("woff"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.svg#Futura Lt BT") format("svg"); }
+    </style>
+
+    <title>Template</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </nav>
+<div class="title"></div>
+<div id="container">
+<p>
+
+
+</p>
+
+</div>
+
+<script type="x-handlebars-template">
+
+</script>
+<script>
+
+
+
+
+    console.log('lookingfordata')
+    fetch('./database.db').then(response => {response.json;
+    console.log(response);
+   return response.json();
+    }).then(response => {
+        if(contentType = 1){
+
+        }
+    });
+
+
+
+    var acc = document.getElementsByClassName("accordionHeader");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+        console.log("clicked")
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        panel.classList.toggle("activeBody")
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+        });
+    };
+</script>
+</body>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor</title>
+    <link rel="shortcut icon" href="Veevelogo.png" type="image/icon">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="index.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>  
+    <style>
+      @import url(//db.onlinewebfonts.com/c/19580604133dfd68ae370ddc889aedab?family=Futura+Lt+BT);
+      @font-face {font-family: "Futura Lt BT"; src: url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.eot"); src: url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.woff") format("woff"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/19580604133dfd68ae370ddc889aedab.svg#Futura Lt BT") format("svg"); }
+    </style>
+  </head>
+  
+  <body>
+    <header>
+      <a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">
+        <img class="logo" src="../Veevelogo.png">
+      <nav class="desktopMenu">
+        </a>
+        <ul>
+          <li><a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">Properties</a></li>
+          <li><a href="https://pms.veeveops.info/admin/real_bookings_list.php">Bookings</a></li>
+          <li><a href="https://pms.veeveops.info/admin/custom/front/key_operations.php">Keys</a></li>
+          <li><a href="https://pms.veeveops.info/admin/custom/front/opsSchedule.php?city=London">Serenity Now</a></li>
+          <li><a href="https://pms.lavanda.app/login">Lavanda</a></li>
+          <li><a href="https://www.keynest.com">Keynest</a></li>
+          <li><a href="../pmshelpdeskhome1.0/index.html">Ops Playbook</a></li>
+      </ul>
+      </nav>
+
+  <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+    <svg id="burgermenu" viewBox="0 0 100 80" width="40" height="55">
+        <rect width="70" height="10" rx="8"></rect>
+        <rect y="20" width="70" height="10" rx="8"></rect>
+        <rect y="40" width="70" height="10" rx="8"></rect>
+    </svg>
+      <ul class="mobile-menu">
+        <li><a href="https://pms.veeveops.info/admin/Properties_List_list.php?orderby=dcreation_time">Properties</a></li>
+        <li><a href="https://pms.veeveops.info/admin/real_bookings_list.php">Bookings</a></li>
+        <li><a href="https://pms.veeveops.info/admin/custom/front/key_operations.php">Keys</a></li>
+        <li><a href="https://pms.veeveops.info/admin/custom/front/opsSchedule.php?city=London">Serenity Now</a></li>
+        <li><a href="https://pms.lavanda.app/login">Lavanda</a></li>
+        <li><a href="https://www.keynest.com">Keynest</a></li>
+        <li><a href="../pmshelpdeskhome1.0/index.html">Ops Playbook</a></li>
+    </ul>
+    </div>
+  </header>
+
+  <button type="buton" class="back"><a href="../pmshelpdeskhome1.0/index.html">Back to the Playbook</a></button>
+  <form name="formHeader"class="bodyContainer" action="insert.php" method="POST">
+    <main class="formBody mt-2 max-w-4xl;">
+    <div class="body-header">
+      <h1 class="flex-1">The Ops Playbook Editor</h1>
+      <div class="buttons flex">
+        <button class="pageDelete flex-1" type="button">Delete Page</button>
+        <button class="submitBtn flex-1" type="button" id="buttonSubmit" onclick="getDataFromForm(document.querySelector('.formBody'))"
+        >Submit</button>
+      </div>
+      </div> 
+         
+    <div class="page-selector-body">
+      <input type="text" value="1" id="contentID" hidden>
+
+        <p>I would like to 
+          <select id="action">
+            <option value="add">Add</option>
+            <option value="change">Change</option>
+          </select> a page in:
+        <select 
+        id="tab"
+        name="tab"
+        class="tabVal"
+        onchange="pageChoser()"
+        >
+          <option value="0">--Select--</option>
+            <option value="1">Process </option>
+            <option value="2">Procedure </option>
+            <option value="3"> Policy</option>
+            <option value="4"> Training Documentation</option>
+            <option value="5"> Troubleshooting</option>
+        </select>   
+    </p>
+
+        <select id="team" name="team" class="teamVal" hidden>
+          <option value="0">--Select--</option>
+          <option value="General">General</option>
+          <option value="QA">QA </option>
+          <option value="PMM"> Property Management and Maintenance</option>
+          <option value="Ops">Ops Co-Ordinator</option>
+      </select>   
+
+      <select name="troubleshooting" id="troubleshooting" class="troubleshootingVal" hidden>
+        <option value="0">--Select--</option>
+        <option value="WiFi">Wifi</option>
+        <option value="HHW">Heating & Hot Water</option>
+        <option value="EM">Entertainment & Media</option>
+        <option value="AWG">Appliances & White Goods</option>
+        <option value="Elec">Electricity</option>
+        <option value="Other">Other</option>
+      </select>
+
+    </div>
+    
+    <!--Add Content Workflow-->
+    <div class="pageTitleDiv mt-2 border border-gray-500 max-w-8xl;">
+      <label for="title">Page Title:</label><br>
+      <input type="text" class="pageTitle" class="flex-1" id="title" name="page_title" placeholder=" Enter the title of your page..." list="pageList" required>
+      <datalist id="pageList" > 
+        <!--Autofill from DB-->
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        </datalist>
+    </div>
+  </form>
+
+
+<!--hidden Div-->
+<div id="container" class="container" name="playbookpagecreator" method="post"></div>
+
+<div id="content-block-container-ID" class="contentContainer ui-sortable" draggable="true">
+  <form id="contentForm[ID]" class="contentForm">
+        <div
+          class="content-block mt-2 border border-gray-500 max-w-8xl ui-state-default"
+          id="content-block-[ID]">
+          <div 
+          class="blockBtnBar flex flex-row">
+          <button class="moveBlock flex-1" type="button">
+              <svg class="flex-1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"/>
+              </svg>
+              <label class="flex-1">
+                  Move Block
+              </label>
+          </button>
+
+            <label class="contentLabel flex-1" id="contentLabel[ID]">
+               Select Content Type
+            </label>
+
+            <button class="show-hide-button flex-1" type="button"
+            >Show/Hide
+            </button>
+
+            <button
+            class="delete flex-1"
+            onclick="this.parentNode.parentNode.remove();"
+            type="button"
+            >
+            Delete Block
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-trash"
+              viewBox="0 0 16 16"
+              style="margin: 1%;"
+            >
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+              />
+            </svg>
+          </button>
+        </div>
+     
+<!--Content Selector-->   
+      <div class="block-content">
+            <p>What content do you want to add?</p>
+            <select name="content_type" class="content-type"
+              onchange="contentChanger([ID], $(this).val())">
+              <option class="selectOption" value="0">-Select-</option>
+              <option 
+              class="headingOption" 
+              value="1">Heading</option>
+              <option class="textOption" value="2">Text</option>
+              <option class="photoOption" value="3">Picture</option>
+              <option class="videoOption" value="4">Video</option>
+            </select>
+
+            <div class="selectBox">
+              <p>Please select what content you wish to add above.</p>
+            </div>
+
+            <!--Heading-->
+            <div 
+            class="headingBox">
+              <label for="heading">Heading:</label>
+              <input
+                type="text"
+                class="heading"
+                id="heading[ID]"
+                name="heading[ID]"
+                placeholder="Type Your heading here..."
+              />
+              </div>
+
+<!--Text Area-->
+           <div class="textBox">
+              <textarea class="editor" name="text_area[ID]" id="editor[ID]"></textarea>
+            </div>
+
+
+<!--Upload Photo-->
+            <div 
+            class="photoBox"#>
+            <input type="file" class="photo" id="photoUpload[ID]" name="photoUpload[ID]">
+            <br><p>Please give a breif description of the photo you are uploading:</p>
+            <input type="text" name="alt_text[ID]" class="photoAltText">
+            </div>
+
+<!--Video Upload-->
+            <div
+             class="videoBox">
+             <label for="videoUpload">Video-link</label>
+             <input class="videoLink" type="text" id="videoUpload[ID]" name="videolink[ID]"/>
+            </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+
+<!--add another block-->
+      <div class="addAnotherBlock">
+        <button class="addAnotherBlockButton"
+          id="add-block" type="button"
+        >
+          <p>Add another content block</p>
+          <svg
+            id="add-block-btn"
+            class="svg-circleplus flex-1"
+            viewBox="0 0 100 100"
+          >
+            <line x1="32.5" y1="50" x2="67.5" y2="50" stroke-width="5"></line>
+            <line x1="50" y1="32.5" x2="50" y2="67.5" stroke-width="5"></line>
+          </svg>
+        </button>
+      </div>
+
+    </main>
+    <script>
+
+      //Duplicate Function
+    function duplicate(){ 
+      const contentID = $("#contentID")
+      const blockID = parseInt(contentID.val()) + 1;
+
+      contentID.val(blockID);
+      
+      console.log("duplicate");
+      const original = $("#content-block-container-ID").html();
+
+
+      // console.log(original)
+      const newContainer = original.replaceAll("[ID]", blockID);
+      $("#container").append(newContainer);
+
+      var el = document.getElementById('content-block-'+blockID).parentElement;
+      var sortable = Sortable.create(el,{
+        handle: ".moveBlock",
+      });
+
+     setupEventListeners();
+    }
+
+//ShowHideFunction
+
+    function showHide(clickEvent) {
+      const specificShowHideButton = clickEvent.target;
+      console.log("show/hide clicked")
+      const rootBlock = specificShowHideButton.parentElement.parentElement;
+      const actualContent = rootBlock.querySelector(".block-content");
+      actualContent.classList.toggle("hidden");
+    }
+
+//content changer function
+    function contentChanger(id, val){
+      const sb = $('#content-block-'+id).find('.selectBox');
+      const hb = $('#content-block-'+id).find('.headingBox');
+      const tb = $('#content-block-'+id).find('.textBox');
+      const pb = $('#content-block-'+id).find('.photoBox');
+      const vb = $('#content-block-'+id).find('.videoBox');
+
+      if (val > 0) {
+          sb.hide();
+        console.log(val)
+          switch (val) {
+            case "1":
+              $('#contentLabel'+ id).html('Heading');
+            console.log("heading shown");
+              hb.show();
+              sb.hide();
+              tb.hide();
+              pb.hide();
+              vb.hide();
+              break;
+            case "2":
+            $('#contentLabel'+ id).html('Text Area')
+            console.log("text shown");
+              tb.show();
+              hb.hide();
+              sb.hide();
+              pb.hide();
+              vb.hide();
+              break;
+            case "3":
+            $('#contentLabel'+ id).html('Photo')
+            console.log("photo shown");
+              pb.show();
+              hb.hide();
+              sb.hide();
+              tb.hide();
+              vb.hide();
+              break;
+            case "4":
+            $('#contentLabel'+ id).html('Video')
+            console.log("video shown");
+              vb.show();
+              hb.hide();
+              sb.hide();
+              pb.hide();
+              tb.hide();
+              break;
+          }
+          } else {
+              sb.show();
+              hb.hide();
+              tb.hide();
+              pb.hide();
+              vb.hide();
+              console.log("selector shown")
+            $('#contentLabel'+ id).html('Select Content Type')
+          }
+        };
+
+
+//pagepicker
+
+function pageChoser() {
+    console.log("selector")
+    const tabval = $('#tab').val();
+    const troubleshooting = $('#troubleshooting');
+    const team = $('#team');
+    console.log(tabval);
+    if (tabval > 0) {
+            troubleshooting.hide();
+            team.hide();
+
+            switch(tabval) {
+                case "1": 
+                console.log("Show team menu");
+                team.show();
+                troubleshooting.hide();
+                break;
+
+                case "2":
+                console.log("Show team menu");
+                team.show();
+                troubleshooting.hide();
+                break;
+
+                case "3":
+                console.log("Show team menu");
+                team.show();
+                troubleshooting.hide();
+                break;
+
+                case "4":
+                console.log("Show team menu");
+                team.show();
+                troubleshooting.hide();
+                break;
+
+                case "5":
+                console.log("troubleshooting Menu Shown");
+                team.hide();
+                troubleshooting.show();
+                break;
+
+                }
+                } else {
+                troubleshooting.hide();
+                team.hide();
+                }
+        }
+        
+
+//ID Generator
+function createIdGenerator(){
+  let id = 0;
+
+  return function generateId(){
+      id++
+      return "generated-id-" + id
+  }
+}
+
+const idGenerator = createIdGenerator();
+
+let anId = idGenerator()
+let anotherId = idGenerator()
+
+// mobile menu toggle
+function toggleMobileMenu(menu) {
+menu.classList.toggle('open')
+};
+
+//EventListener Setup
+
+function setupEventListeners() {
+  var addBlockButton = document.querySelector("button#add-block");
+  
+  addBlockButton.addEventListener("click", duplicate);
+
+  document
+  .querySelectorAll(".show-hide-button")
+  .forEach((contentBlock) => {
+    contentBlock.addEventListener("click", showHide);
+  });   
+}
+
+window.addEventListener("load", setupEventListeners);
+
+
+
+
+  </script>
+  </body>
+  </html>

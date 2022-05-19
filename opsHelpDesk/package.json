@@ -1,0 +1,24 @@
+{
+  "name": "opshelpdesk",
+  "version": "1.0.0",
+  "description": "",
+  "source": "changer/index.js",
+  "main": "changer/output.js",
+  "scripts": {
+    "start": "parcel watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "parcel": "^2.3.2",
+    "postcss": "^8.4.8",
+    "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3",
+    "handlebars": "^4.7.7",
+    "morgan": "^1.10.0"
+  }
+}
